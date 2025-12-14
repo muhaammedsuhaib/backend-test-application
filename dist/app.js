@@ -60,7 +60,11 @@ const corsOptions = {
     optionsSuccessStatus: 204,
     credentials: true,
 };
-app.use((0, cors_1.default)(corsOptions));
+// app.use(cors(corsOptions));
+app.use((0, cors_1.default)({
+    origin: true,
+    credentials: true,
+}));
 (0, db_1.default)();
 app.use(express_1.default.json());
 //static file serving

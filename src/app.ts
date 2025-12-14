@@ -30,7 +30,13 @@ const corsOptions: CorsOptions = {
   credentials: true,
 };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: true,
+    credentials: true,
+  })
+);
 
 connectDB();
 
